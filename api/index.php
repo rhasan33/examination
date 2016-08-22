@@ -2,7 +2,9 @@
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Request as Request;
-include_once "vendor/autoload.php";
+require_once __DIR__ . '/vendor/autoload.php';
+include_once  __DIR__."/controllers/user.php";
+$user = new User();
 $configuration = [
     'settings' => [
         'displayErrorDetails' => true,
@@ -14,8 +16,6 @@ $configuration = [
 $container = new \Slim\Container($configuration);
 $app = new \Slim\App($container);
 
-$app->get('/test', function ($request, $response, $args) {
-    return $response->write("Hello ");
-});
+$app->get('/test', $user->user());
 
 $app->run();
