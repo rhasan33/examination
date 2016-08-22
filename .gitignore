@@ -1,1 +1,3 @@
-backend/vendor
+api/vendor/
+.idea
+api/composer.lock
