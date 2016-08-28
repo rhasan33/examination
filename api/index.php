@@ -4,7 +4,9 @@ use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Request as Request;
 require_once __DIR__ . '/vendor/autoload.php';
 include_once  __DIR__."/controllers/user.php";
+include_once  __DIR__.'/controllers/auth.php';
 $user = new User();
+$auth = new Authentication();
 $configuration = [
     'settings' => [
         'displayErrorDetails' => true,
