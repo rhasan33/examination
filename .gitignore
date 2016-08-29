@@ -1,3 +1,4 @@
 api/vendor/
 .idea
 api/composer.lock
+frontend/assets/
