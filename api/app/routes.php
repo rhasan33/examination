@@ -1,5 +1,2 @@
 <?php
-
-$user = new \App\Models\User();
-
-$app->get('/test', $user->data());
+$app->get('/test', 'User:data');
