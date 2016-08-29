@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "feca2e144e0f43b8d7cd3d9d738a94bb",
-    "content-hash": "fabc795e64591b5abe05c2e20a150172",
     "packages": [
         {
             "name": "adoy/oauth2",
