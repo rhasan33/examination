@@ -11,8 +11,11 @@ $configuration = [
         'determineRouteBeforeAppMiddleware' => true
     ]
 ];
+$app = new \Slim\App($configuration);
 
-$container = new \Slim\Container($configuration);
-$app = new \Slim\App($container);
+$container = $app->getContainer();
+$container['User'] = function($container){
+    return new App\Controllers\Users;
+};
 
-include_once __DIR__ . '/../app/routes.php';
+include_once __DIR__ . '/../App/routes.php';
