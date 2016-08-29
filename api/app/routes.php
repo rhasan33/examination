@@ -1,5 +1,5 @@
 <?php
 
-$app->get('/test', function($req, $res){
-      return "Hello";
-});
+$user = new \App\Models\User();
+
+$app->get('/test', $user->data());
