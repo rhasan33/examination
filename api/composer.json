@@ -1,11 +1,20 @@
 {
     "require": {
         "slim/slim": "3.*",
+<<<<<<< HEAD
         "auth0/auth0-php": "^3.4"
     },
     "autoload": {
         "psr-4": {
               "App\\": "app"
+=======
+        "bshaffer/oauth2-server-php": "^1.8",
+        "illuminate/database": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App"
+>>>>>>> 4d54b072ad3b662b272d6c557c522dd9d8bfdf72
         }
     }
 }

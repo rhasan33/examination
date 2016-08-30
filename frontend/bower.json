@@ -1,0 +1,27 @@
+{
+  "name": "Online Examination",
+  "homepage": "www.rhasan33.net/online_exam",
+  "authors": [
+    "Rakib Hasan Amiya <rhasan.amiya@gmail.com>"
+  ],
+  "description": "Taking online examination by setting up the question using angular",
+  "main": "index.html",
+  "keywords": [
+    "online_exam",
+    "hiit"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.0",
+    "angular-ui-router": "^0.3.1"
+  }
+}
