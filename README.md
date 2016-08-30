@@ -1,2 +1,2 @@
-# examination
-Online Examination
+# Online Examination System
+## Installation
