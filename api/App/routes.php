@@ -1,3 +1,3 @@
 <?php
 
-$app->get('/test', 'User:data');
+$app->get('/test', 'Users:data');
