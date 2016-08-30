@@ -1,22 +1,39 @@
 <?php
+ini_set('display_error', true);
+
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Request as Request;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
-include_once __DIR__ . '/../vendor/autoload.php';
+define('INC_ROOT', dirname(__DIR__));
 
-$configuration = [
-    'settings' => [
-        'displayErrorDetails' => true,
-        'determineRouteBeforeAppMiddleware' => true
-    ]
+include_once INC_ROOT . '/vendor/autoload.php';
+$config = [
+	'app' => [
+		'url' 	=> 'http://examination.dev',
+		'hash'	=> [
+			'alog'	=> PASSWORD_BCRYPT,
+			'cost'	=> 20
+		]
+	],
+	'db' => [
+		'driver'    => 'mysql',
+		'host'      => 'localhost',
+		'database'  => 'database',
+		'username'  => 'root',
+		'password'  => 'password',
+		'charset'   => 'utf8',
+		'collation' => 'utf8_unicode_ci',
+		'prefix'    => '',
+	],
+	'settings' => [
+		'displayErrorDetails' => true,
+		'determineRouteBeforeAppMiddleware' => true,
+	]
 ];
-$app = new \Slim\App($configuration);
+$app = new \Slim\App($config);
 
-$container = $app->getContainer();
+include_once INC_ROOT . '/Bootstrap/containers.php';
 
-$container['Users'] = function($container){
-    return new App\Controllers\Users();
-};
-
-include_once __DIR__ . '/../App/routes.php';
+include_once INC_ROOT . '/App/routes.php';
